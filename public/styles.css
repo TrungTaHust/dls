@@ -1,0 +1,376 @@
+html {
+    height: 100%;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('res/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Phần tìm kiếm */
+.search-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.search-item {
+    flex: 1 1 120px;
+    min-width: 100px;
+}
+
+    .search-item input {
+        width: 80%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .search-item select {
+        width: 80%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: white;
+        font-size: 14px;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 20px;
+        transition: all 0.3s ease;
+    }
+
+        .search-item select:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 2px rgba(0,123,255,.25);
+        }
+
+        .search-item select:hover {
+            border-color: #999;
+        }
+
+        .search-item select option {
+            padding: 10px;
+        }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.column {
+    flex: 1;
+    min-width: 500px;
+    background-color: rgba(173, 216, 230, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+    .column:first-child {
+        flex: 3; /* Cột bên trái chiếm 3 phần */
+    }
+
+    .column:last-child {
+        flex: 2; /* Cột bên phải chiếm 2 phần */
+    }
+
+#results {
+    width: 100%;
+    max-width: none; /* Loại bỏ giới hạn chiều rộng tối đa */
+    margin: 0 auto;
+}
+
+.info-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.header-info-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 5px;
+}
+
+.info-item {
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 75px;
+    box-sizing: border-box;
+    margin: 10px;
+    color: black;
+    font-weight: bold
+}
+
+/* Phần thông tin cầu thủ */
+.player-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 5px;
+    background-color: #f0f0f0;
+}
+
+    .player-header div {
+        flex: 1 1 200px;
+        box-sizing: border-box;
+        border-radius: 4px;
+        padding: 10px;
+        height: 40px;
+        display: flex;
+        text-align: left;
+        align-items: center;
+        font-weight: bold;
+    }
+
+.player-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 5px;
+    background-color: rgba(240, 240, 240, 0.7);
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+    .player-row:hover {
+        background-color: rgba(224, 224, 224, 0.9);
+    }
+
+    .player-row.selected {
+        background-color: rgba(208, 208, 208, 0.9);
+    }
+
+/* Màu nền nhẹ hơn nhưng đậm hơn một chút */
+.cf, .ss, .lw, .rw {
+    background-color: #ff6666; /* Sắc thái đỏ nhẹ hơn */
+}
+
+.cm, .am, .dm, .lm, .rm, .lwb, .rwb {
+    background-color: #ffff99; /* Sắc thái vàng nhẹ hơn */
+}
+
+.lb, .cb, .rb {
+    background-color: #66ff66; /* Sắc thái xanh lá nhẹ hơn */
+}
+
+.gk {
+    background-color: #99ccff; /* Sắc thái xanh lam nhẹ hơn */
+}
+
+.player-row.high-rating {
+    background-color: #efea80ff;
+}
+
+.player-row.medium-rating {
+    background-color: #87CEEB;
+}
+
+.player-row.low-rating {
+    background-color: #FFFFFF;
+}
+
+.player-info.position {
+    flex: 0 0 auto;
+    width: 10px;
+    text-align: center;
+    border-radius: 3px;
+}
+
+    .player-info.position.forward {
+        background-color: red;
+    }
+
+    .player-info.position.midfielder {
+        background-color: orange;
+    }
+
+    .player-info.position.defender {
+        background-color: green;
+    }
+
+    .player-info.position.goalkeeper {
+        background-color: dodgerblue;
+    }
+
+.player-frame {
+    background-color: azure;
+    flex: 1;
+    padding: 5px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.player-info {
+    flex: 1;
+    padding: 5px;
+    text-align: left;
+}
+
+    .player-info.name {
+        flex: 2;
+    }
+
+    .player-info.position,
+    .player-info.rating {
+        flex: 1;
+    }
+
+#results {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-content h2 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+.footer-content a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+    .footer-content a:hover {
+        color: #ddd;
+        text-decoration: underline;
+    }
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    button:disabled {
+        background-color: #6c757d; /* Màu nền của nút khi bị vô hiệu hóa */
+        cursor: not-allowed;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+/* Container phân trang */
+.pagination {
+    display: flex;
+    justify-content: center; /* Căn giữa các nút phân trang */
+    gap: 10px;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .column {
+        width: 100%;
+    }
+
+    .search-item {
+        flex: 1 1 100%;
+    }
+}
+
+
+.autocomplete-wrapper {
+    position: relative;
+    width: 300px;
+}
+
+    .autocomplete-wrapper input {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+.autocomplete-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    width: 200px;
+    background-color: white;
+    display: none;
+}
+
+    .autocomplete-list li {
+        padding: 10px;
+        cursor: pointer;
+    }
+
+        .autocomplete-list li:hover {
+            background-color: #f0f0f0;
+        }

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DLS 2024 Player's stats</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <main>
+        <div class="search-container">
+            <div class="search-item">
+                <input type="text" id="nameInput" placeholder="Name">
+            </div>
+            <div class="search-item">
+                <input type="text" id="nationInput" placeholder="Nationality">
+                <ul id="nationList" class="autocomplete-list"></ul>
+            </div>
+
+            <div class="search-item">
+                <input type="text" id="clubInput" placeholder="Club">
+                <ul id="clubList" class="autocomplete-list"></ul>
+            </div>
+
+            <div class="search-item">
+                <select id="positionInput">
+                    <option value="">Position</option>
+                    <option value="CF">CF</option>
+                    <option value="LW">LW</option>
+                    <option value="RW">RW</option>
+                    <option value="SS">SS</option>
+                    <option value="AM">AM</option>
+                    <option value="CM">CM</option>
+                    <option value="DM">DM</option>
+                    <option value="LM">LM</option>
+                    <option value="RM">RM</option>
+                    <option value="LWB">LWB</option>
+                    <option value="RWB">RWB</option>
+                    <option value="LB">LB</option>
+                    <option value="RB">RB</option>
+                    <option value="CB">CB</option>
+                    <option value="GK">GK</option>
+                </select>
+            </div>
+
+            <div class="search-item">
+                <select id="footInput">
+                    <option value="">Foot</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="B">B</option>
+                </select>
+            </div>
+
+            <div class="search-item">
+                <input type="text" id="ratingInput" placeholder="Rating">
+            </div>
+        </div>
+
+        <button onclick="search()">Search</button>
+        <div class="container">
+            <div class="column">
+                <div id="results"></div>
+                <div class="pagination">
+                    <button id="backButton" disabled>Back</button>
+                    <button id="nextButton" disabled>Next</button>
+                </div>
+            </div>
+            <div class="column">
+                <div class="player-frame">
+                    <div id="playerHeader" class="player-header">
+                        <h2 id="playerName"></h2>
+                    </div>
+                    <div class="header-info-container">
+                        <p>Price: <span id="playerPrice"></span></p>
+                        <p>Nationality: <span id="playerNationality"></span></p>
+                        <p>Club: <span id="playerClub"></span></p>
+                        <p>Position: <span id="playerPosition"></span></p>
+                        <p>Leg: <span id="playerFoot"></span></p>
+                        <p>Rating: <span id="playerRating"></span></p>
+                        <p>Height: <span id="playerHeight"></span></p>
+                    </div>
+                    <div class="info-container">
+                        <div id="speedInfo" class="info-item">
+                            SPE: <span id="playerSpeed"></span>
+                        </div>
+                        <div id="accInfo" class="info-item">
+                            ACC: <span id="playerAcceleration"></span>
+                        </div>
+                        <div id="gkrInfo" class="info-item">
+                            STA: <span id="playerReaction"></span>
+                        </div>
+                        <div id="strInfo" class="info-item">
+                            STR: <span id="playerStrength"></span>
+                        </div>
+                        <div id="conInfo" class="info-item">
+                            CON: <span id="playerControl"></span>
+                        </div>
+                        <div id="pasInfo" class="info-item">
+                            PAS: <span id="playerPassing"></span>
+                        </div>
+                        <div id="gkhInfo" class="info-item">
+                            SHO: <span id="playerHandling"></span>
+                        </div>
+                        <div id="tacInfo" class="info-item">
+                            TAC: <span id="playerTackling"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <h2>Contact</h2>
+            <p>Email: trungta.hust@gmail.com</p>
+            <p>Facebook: <a href="https://www.facebook.com/hieu.tatrung.7/" target="_blank">facebook.com/hieu.tatrung.7</a></p>
+            <p>X: <a href="https://x.com/TrungTa4970" target="_blank">x.com/TrungTa4970</a></p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
